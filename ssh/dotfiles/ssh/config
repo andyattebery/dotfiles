@@ -1,0 +1,11 @@
+Host *
+  ControlMaster auto
+  ControlPath ${HOME}/.ssh/ssh_mux_%h_%p_%r
+  Compression no
+  ServerAliveInterval 120
+  AddKeysToAgent yes
+  IgnoreUnknown UseKeychain
+  UseKeychain yes
+
+# Include config files in ~/.ssh/conf.d
+Include conf.d/*

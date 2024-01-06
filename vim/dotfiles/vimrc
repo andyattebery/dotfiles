@@ -1,0 +1,21 @@
+" Add settings directories to vim paths
+set runtimepath^=$DOTFILES_DIR/vim/config/vim
+set runtimepath+=$DOTFILES_DIR/vim/config/vim/after
+set packpath^=$DOTFILES_DIR/vim/config/vim
+set packpath+=$DOTFILES_DIR/vim/config/vim/after
+
+" Add plugin directories to vim paths
+"set runtimepath+=$FZF_DIR
+
+" Set color scheme
+set background=dark
+colorscheme solarized
+
+" Set soft tabs
+set expandtab
+set tabstop=4
+
+if has('gui_running')
+  set macligatures
+  set guifont=Fira\ Code\ Retina:h14
+endif

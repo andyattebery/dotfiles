@@ -1,0 +1,12 @@
+[submodule "vim/config/vim/pack/packages/start/vim-vinegar"]
+	path = vim/config/vim/pack/packages/start/vim-vinegar
+	url = git@github.com:tpope/vim-vinegar.git
+[submodule "vim/config/vim/pack/packages/start/vim-fugitive"]
+	path = vim/config/vim/pack/packages/start/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive.git
+[submodule "vim/config/vim/pack/packages/start/vim-sensible"]
+	path = vim/config/vim/pack/packages/start/vim-sensible
+	url = git@github.com:tpope/vim-sensible.git
+[submodule "vim/config/vim/pack/packages/start/vim-colors-solarized"]
+	path = vim/config/vim/pack/packages/start/vim-colors-solarized
+	url = git@github.com:altercation/vim-colors-solarized.git
