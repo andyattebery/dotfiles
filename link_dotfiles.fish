@@ -14,5 +14,5 @@ for d in (find . -type d -name dotfiles -print0 | string split0)
 
     echo "Linking dotfiles in $dotfiles_parent_dir"
 
-    link_settings dotfiles $d
+    link_settings dotfiles $dotfiles_parent_dir
 end
