@@ -3,6 +3,7 @@ set fish_greeting # Clear the default greeting
 
 # Set base environment variables
 set --export DOTFILES_DIR $HOME/dotfiles
+set --export HOSTNAME (hostname)
 
 # Set platform environment variables
 set --export IS_OS_LINUX false
