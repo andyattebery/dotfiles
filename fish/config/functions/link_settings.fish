@@ -96,6 +96,12 @@ function __link_dotfiles \
     for source_file_path in (find $full_dotfiles_dir_path -type f -not -name '.DS_Store' -print0 | string split0)
         set -l destination_file_path (string replace --regex "$full_dotfiles_dir_path/([^/]+)" "$HOME/.\$1" -- $source_file_path)
 
+        set dotfile_dir_path (path dirname $destination_file_path)
+
+        if ! test -e $dotfile_dir_path
+            mkdir -p $dotfile_dir_path
+        end
+
         if test -e $destination_file_path -a ! -L $destination_file_path
             rm $destination_file_path
         end
