@@ -20,27 +20,18 @@ case 'Darwin*'
   set --export IS_OS_MACOS true
 end
 
-# Set Homebrew environment variables
-if test -e /opt/homebrew
-  set --export HOMEBREW_DIR /opt/homebrew
-else if test -e /usr/local/Homebrew
-  set --export HOMEBREW_DIR /usr/local/Homebrew
-end
-
 # Add to PATH
-set --query HOMEBREW_DIR; and fish_add_path "$HOMEBREW_DIR"/*bin;
-test -e "$HOMEBREW_DIR"/opt/ruby/bin; and fish_add_path "$HOMEBREW_DIR"/opt/ruby/bin
-# golang
-test -e "$HOME"/go/bin; and fish_add_path "$HOME"/go/bin
-test -e $HOME/scripts; and fish_add_path "$HOME"/scripts
 fish_add_path $DOTFILES_DIR/sh/config/bin
+test -e $HOME/.local/bin; and fish_add_path "$HOME"/.local/bin
+test -e $HOME/scripts; and fish_add_path "$HOME"/scripts
 
 # Add fish/config/functions directories to fish_function_path
 for function_dir in (find $DOTFILES_DIR/fish/config/functions -type d -print0 | string split0)
   set --local base_function_dir (basename "$function_dir")
 
   if test "$base_function_dir" = "functions"
-  or command -q "$base_function_dir"
+  or command --query "$base_function_dir"
+  or test -e "$PYENV_ROOT/shims/$base_function_dir"
   or test "$base_function_dir" = "linux" -a $IS_OS_LINUX
   or test "$base_function_dir" = "macos" -a $IS_OS_MACOS
     set --prepend fish_function_path "$function_dir"
@@ -59,14 +50,38 @@ for conf_dir in (find $DOTFILES_DIR/fish/config/conf.d -type d)
   end
 end
 
+# homebrew
+if test -e /opt/homebrew
+  set --export HOMEBREW_DIR /opt/homebrew
+  set --export HOMEBREW_BUNDLE_FILE "$DOTFILES_DIR/homebrew/Brewfile"
+  /opt/homebrew/bin/brew shellenv | source
+end
+
+# dotnet
+test -n "$HOMEBREW_DIR"; and type --query dotnet; and set --export DOTNET_ROOT $HOMEBREW_DIR/opt/dotnet/libexec
+
+# golang
+test -e "$HOME"/go/bin; and fish_add_path "$HOME"/go/bin
+
+# rbenv
+status --is-interactive; and type --query rbenv; and rbenv init - --no-rehash fish | source
+
+# pyenv
+status --is-interactive; and type --query pyenv; and pyenv init - fish | source
+
 # mosh
 set --export MOSH_TITLE_NOPREFIX 1
 
 # rsync
 set --export RSYNC_RSH 'ssh -o "ControlMaster no" -o "ControlPath /dev/null"'
 
-# dotnet
-test -n "$HOMEBREW_DIR"; and type --query dotnet; and set --export DOTNET_ROOT $HOMEBREW_DIR/opt/dotnet/libexec
-
 # iTerm 2 shell integration
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
+# Added by LM Studio CLI (lms)
+fish_add_path /Users/andy/.lmstudio/bin
+# End of LM Studio CLI section
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :
