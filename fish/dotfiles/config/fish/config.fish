@@ -30,7 +30,8 @@ end
 # Add to PATH
 set --query HOMEBREW_DIR; and fish_add_path "$HOMEBREW_DIR"/*bin;
 test -e "$HOMEBREW_DIR"/opt/ruby/bin; and fish_add_path "$HOMEBREW_DIR"/opt/ruby/bin
-test -e $HOME/.local/bin; and fish_add_path "$HOME"/.local/bin
+# golang
+test -e "$HOME"/go/bin; and fish_add_path "$HOME"/go/bin
 test -e $HOME/scripts; and fish_add_path "$HOME"/scripts
 fish_add_path $DOTFILES_DIR/sh/config/bin
 
@@ -60,6 +61,9 @@ end
 
 # mosh
 set --export MOSH_TITLE_NOPREFIX 1
+
+# rsync
+set --export RSYNC_RSH 'ssh -o "ControlMaster no" -o "ControlPath /dev/null"'
 
 # dotnet
 test -n "$HOMEBREW_DIR"; and type --query dotnet; and set --export DOTNET_ROOT $HOMEBREW_DIR/opt/dotnet/libexec

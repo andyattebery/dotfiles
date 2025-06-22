@@ -1,4 +1,4 @@
-" Add settings directories to vim paths
+" Add dotfiles directories to vim paths
 set runtimepath^=$DOTFILES_DIR/vim/config/vim
 set runtimepath+=$DOTFILES_DIR/vim/config/vim/after
 set packpath^=$DOTFILES_DIR/vim/config/vim

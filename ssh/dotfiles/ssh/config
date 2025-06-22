@@ -1,6 +1,6 @@
 Host *
   ControlMaster auto
-  ControlPath ${HOME}/.ssh/ssh_mux_%h_%p_%r
+  ControlPath ${HOME}/.ssh/ssh_control_%C
   Compression no
   ServerAliveInterval 120
   AddKeysToAgent yes

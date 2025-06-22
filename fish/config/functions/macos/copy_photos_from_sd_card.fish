@@ -14,7 +14,9 @@ function copy_photos_from_sd_card
 
     set --local date_stamp (date "+%Y-%m-%d")
 
-    for source_photo_directory_path in (find $sd_card_path/DCIM -mindepth 1 -type d -print0 | string split0)
+    # for source_photo_directory_path in (find $sd_card_path/DCIM -mindepth 1 -type d -print0 | string split0)
+        set --local source_photo_directory_path "$sd_card_path/DCIM"
+
         set --local raw_file_count (__get_extensions_file_count "$source_photo_directory_path" $raw_file_extensions)
         set --local compressed_file_count (__get_extensions_file_count "$source_photo_directory_path" $compressed_file_extensions)
 
@@ -24,7 +26,7 @@ function copy_photos_from_sd_card
         set --local total_photo_file_count (math $raw_file_count + $compressed_file_count)
 
         if test $total_photo_file_count -eq 0
-            continue
+            # continue
         end
 
         set --local first_file_path (find $source_photo_directory_path -type f)
@@ -67,7 +69,7 @@ function copy_photos_from_sd_card
                 rsync -a --info=progress2 --mkpath $source_movie_source_path/ $import_movie_directory_path
             end
         end
-    end
+    # end
 
 
 end
