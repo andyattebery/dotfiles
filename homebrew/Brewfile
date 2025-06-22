@@ -1,0 +1,69 @@
+brew "fish"
+brew "git"
+brew "mas"
+brew "mosh"
+brew "tmux"
+
+# development environments
+brew "dotnet"
+brew "nvm"
+brew "pyenv"
+brew "pyenv-virtualenv"
+brew "rbenv"
+
+# python-build dependencies
+brew "openssl"
+brew "readline"
+brew "sqlite3"
+brew "xz"
+brew "zlib"
+brew "tcl-tk@8"
+brew "libb2"
+
+cask "1password"
+cask "1password-cli"
+cask "affinity-photo"
+cask "alfred"
+cask "bambu-studio"
+cask "discord"
+cask "eloston-chromium"
+cask "firefox"
+cask "font-fira-code"
+cask "font-fira-code-nerd-font"
+cask "gitup"
+cask "iina"
+cask "istat-menus"
+cask "iterm2"
+cask "lm-studio"
+cask "microsoft-office"
+cask "omnidisksweeper"
+cask "orbstack"
+cask "raspberry-pi-imager"
+cask "signal"
+cask "slack"
+cask "syncthing"
+cask "textexpander"
+cask "transmission"
+cask "visual-studio-code"
+cask "vivaldi"
+cask "vlc"
+
+mas "1Password for Safari", id: 1569813296
+mas "CARROTweather", id: 993487541
+mas "Disk Aid", id: 1007358832
+mas "Fantastical", id: 975937182
+mas "HomeControl", id: 1547121417
+mas "Ivory", id: 6444602274
+mas "NepTunes", id: 1006739057
+mas "Noir", id: 1592917505
+mas "Paprika Recipe Manager 3", id: 1303222628
+mas "Parcel", id: 639968404
+mas "Reeder", id: 6475002485
+mas "Silicio", id: 933627574
+mas "Tailscale", id: 1475387142
+mas "TestFlight", id: 899247664
+mas "The Camelizer", id: 1532579087
+mas "The Unarchiver", id: 425424353
+mas "ToothFairy", id: 1191449274
+mas "WireGuard", id: 1451685025
+mas "Xcode", id: 497799835
