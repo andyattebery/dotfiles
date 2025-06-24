@@ -20,6 +20,11 @@ case 'Darwin*'
   set --export IS_OS_MACOS true
 end
 
+if $IS_OS_MACOS
+  # Set DISPLAY so git will use it to determine the --gui switch for tools
+  set --export DISPLAY ":0"
+end
+
 # Add to PATH
 fish_add_path $DOTFILES_DIR/sh/config/bin
 test -e $HOME/.local/bin; and fish_add_path "$HOME"/.local/bin
@@ -53,7 +58,7 @@ end
 # homebrew
 if test -e /opt/homebrew
   set --export HOMEBREW_DIR /opt/homebrew
-  set --export HOMEBREW_BUNDLE_FILE "$DOTFILES_DIR/homebrew/Brewfile"
+  set --export HOMEBREW_BUNDLE_FILE "$DOTFILES_DIR/homebrew/config/Brewfile"
   /opt/homebrew/bin/brew shellenv | source
 end
 

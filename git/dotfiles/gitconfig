@@ -37,8 +37,12 @@
 [merge]
   summary = true
   verbosity = 1
-	tool = Kaleidoscope
+  guitool = bc
+	tool = vimdiff
 [mergetool]
+  # Select merge.guitool or merge.tool depending on the presence of a DISPLAY environment variable value
+  # https://git-scm.com/docs/git-mergetool#Documentation/git-mergetool.txt-mergetoolguiDefault
+  guiDefault = auto
 	prompt = false
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
@@ -48,8 +52,10 @@
   # instead of a/b/c/d as prefixes for patches
   mnemonicprefix = true
 	algorithm = patience
-	tool = Kaleidoscope
+	guitool = bc
+  tool = vimdiff
 [difftool]
+  guiDefault = auto
 	prompt = false
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
