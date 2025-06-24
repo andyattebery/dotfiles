@@ -5,7 +5,10 @@ brew "eth-p/software/bat-extras-batman"
 brew "fish"
 brew "fzf"
 brew "git"
+brew "git-delta"
+brew "jq"
 brew "mas"
+# brew "mosh" # Build from source since the homebrew version segfaults
 brew "ripgrep"
 brew "tmux"
 
@@ -27,15 +30,21 @@ brew "libb2"
 
 cask "1password"
 cask "1password-cli"
+cask "adobe-creative-cloud"
 cask "affinity-photo"
 cask "alfred"
+cask "arq"
 cask "bambu-studio"
+cask "bartender"
+cask "beyond-compare"
+cask "coconutbattery"
 cask "discord"
 cask "eloston-chromium"
 cask "firefox"
 cask "font-fira-code"
 cask "font-fira-code-nerd-font"
 cask "gitup"
+cask "home-assistant"
 cask "iina"
 cask "istat-menus"
 cask "iterm2"
@@ -50,7 +59,6 @@ cask "syncthing"
 cask "textexpander"
 cask "transmission"
 cask "visual-studio-code"
-cask "vivaldi"
 cask "vlc"
 
 mas "1Password for Safari", id: 1569813296
@@ -63,7 +71,7 @@ mas "NepTunes", id: 1006739057
 mas "Noir", id: 1592917505
 mas "Paprika Recipe Manager 3", id: 1303222628
 mas "Parcel", id: 639968404
-mas "Reeder", id: 6475002485
+mas "Reeder", id: 1529448980
 mas "Silicio", id: 933627574
 mas "Tailscale", id: 1475387142
 mas "TestFlight", id: 899247664
