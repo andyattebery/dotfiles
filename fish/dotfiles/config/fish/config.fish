@@ -3,10 +3,6 @@ set fish_greeting # Clear the default greeting
 
 # Fundle
 if not functions -q fundle; eval (curl -sfL https://git.io/fundle-install); end
-fundle plugin danhper/fish-fastdir
-fundle plugin danhper/fish-ssh-agent
-fundle plugin pure-fish/pure
-fundle init
 
 # Set base environment variables
 set --export DOTFILES_DIR $HOME/dotfiles
