@@ -1,6 +1,13 @@
 # Set built-in fish variables
 set fish_greeting # Clear the default greeting
 
+# Fundle
+if not functions -q fundle; eval (curl -sfL https://git.io/fundle-install); end
+fundle plugin danhper/fish-fastdir
+fundle plugin danhper/fish-ssh-agent
+fundle plugin pure-fish/pure
+fundle init
+
 # Set base environment variables
 set --export DOTFILES_DIR $HOME/dotfiles
 set --export HOSTNAME (hostname)
@@ -82,6 +89,9 @@ set --export MOSH_TITLE_NOPREFIX 1
 
 # rsync
 set --export RSYNC_RSH 'ssh -o "ControlMaster no" -o "ControlPath /dev/null"'
+
+# tide
+# type --query tide; and tide configure --auto --style=Classic --prompt_colors='True color' --classic_prompt_color=Dark --show_time=No --classic_prompt_separators=Angled --powerline_prompt_heads=Sharp --powerline_prompt_tails=Flat --powerline_prompt_style='One line' --prompt_spacing=Compact --icons='Many icons' --transient=No; and tide reload
 
 # iTerm 2 shell integration
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
