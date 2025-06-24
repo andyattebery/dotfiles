@@ -74,6 +74,9 @@ status --is-interactive; and type --query rbenv; and rbenv init - --no-rehash fi
 # pyenv
 status --is-interactive; and type --query pyenv; and pyenv init - fish | source
 
+# bat
+type --query batman; and set --export MANPAGER "env BATMAN_IS_BEING_MANPAGER=yes $(which batman)"
+
 # mosh
 set --export MOSH_TITLE_NOPREFIX 1
 

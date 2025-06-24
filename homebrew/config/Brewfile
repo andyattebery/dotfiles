@@ -1,7 +1,12 @@
+tap "eth-p/software"
+
+brew "bat"
+brew "eth-p/software/bat-extras-batman"
 brew "fish"
+brew "fzf"
 brew "git"
 brew "mas"
-brew "mosh"
+brew "ripgrep"
 brew "tmux"
 
 # development environments
