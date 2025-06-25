@@ -10,6 +10,7 @@ brew "jq"
 brew "mas"
 # brew "mosh" # Build from source since the homebrew version segfaults
 brew "ripgrep"
+brew "starship"
 brew "tmux"
 
 # development environments

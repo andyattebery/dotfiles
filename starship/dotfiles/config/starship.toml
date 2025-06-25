@@ -1,0 +1,60 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+# https://starship.rs/config/
+
+add_newline = false
+
+format = """
+($username@)$hostname $directory$character"""
+
+# move the rest of the prompt to the right
+right_format = """$all"""
+
+[directory]
+fish_style_pwd_dir_length = 3
+truncate_to_repo = false
+truncation_length = 1
+
+[hostname]
+format ="[$hostname]($style)"
+ssh_only = true
+
+[username]
+format = "[$user]($style)"
+show_always = false
+
+[docker_context]
+format = " [docker $context]($style)"
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[golang]
+format = ' [go ($version )]($style)'
+
+[nodejs]
+format = ' [node ($version )]($style)'
+
+[python]
+format = ' [py $pyenv_prefix($version )(\($virtualenv\) )]($style)'
+
+[ruby]
+format = ' [(rb $version )]($style)'
+
+[palettes.solarized]
+base03  = "#002b36" #002b36
+base02  = "#073642" #073642
+base01  = "#586e75" #586e75
+base00  = "#657b83" #657b83
+base0   = "#839496" #839496
+base1   = "#93a1a1" #93a1a1
+base2   = "#eee8d5" #eee8d5
+base3   = "#fdf6e3" #fdf6e3
+yellow  = "#b58900" #b58900
+orange  = "#cb4b16" #cb4b16
+red     = "#dc322f" #dc322f
+magenta = "#d33682" #d33682
+violet  = "#6c71c4" #6c71c4
+blue    = "#268bd2" #268bd2
+cyan    = "#2aa198" #2aa198
+green   = "#859900" #859900

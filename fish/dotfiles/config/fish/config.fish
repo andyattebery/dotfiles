@@ -86,6 +86,10 @@ set --export MOSH_TITLE_NOPREFIX 1
 # rsync
 set --export RSYNC_RSH 'ssh -o "ControlMaster no" -o "ControlPath /dev/null"'
 
+# starship
+# https://starship.rs/guide/
+status --is-interactive; and type --query starship; and starship init fish | source
+
 # tide
 # type --query tide; and tide configure --auto --style=Classic --prompt_colors='True color' --classic_prompt_color=Dark --show_time=No --classic_prompt_separators=Angled --powerline_prompt_heads=Sharp --powerline_prompt_tails=Flat --powerline_prompt_style='One line' --prompt_spacing=Compact --icons='Many icons' --transient=No; and tide reload
 
