@@ -17,6 +17,7 @@ truncation_length = 1
 
 [hostname]
 format ="[$hostname]($style)"
+style = "yellow"
 ssh_only = true
 
 [username]
