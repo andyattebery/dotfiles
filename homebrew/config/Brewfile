@@ -6,19 +6,15 @@ brew "fish"
 brew "fzf"
 brew "git"
 brew "git-delta"
+brew "gpg"
 brew "jq"
+brew "libyaml" # to build ruby
 brew "mas"
+brew "mise"
 # brew "mosh" # Build from source since the homebrew version segfaults
 brew "ripgrep"
 brew "starship"
 brew "tmux"
-
-# development environments
-brew "dotnet"
-brew "nvm"
-brew "pyenv"
-brew "pyenv-virtualenv"
-brew "rbenv"
 
 # python-build dependencies
 brew "openssl"

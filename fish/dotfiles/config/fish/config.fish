@@ -6,7 +6,6 @@ if not functions -q fundle; eval (curl -sfL https://git.io/fundle-install); end
 
 # Set base environment variables
 set --export DOTFILES_DIR $HOME/dotfiles
-set --export HOSTNAME (hostname)
 
 # Set platform environment variables
 set --export IS_OS_LINUX false
@@ -65,18 +64,6 @@ if test -e /opt/homebrew
   /opt/homebrew/bin/brew shellenv | source
 end
 
-# dotnet
-test -n "$HOMEBREW_DIR"; and type --query dotnet; and set --export DOTNET_ROOT $HOMEBREW_DIR/opt/dotnet/libexec
-
-# golang
-test -e "$HOME"/go/bin; and fish_add_path "$HOME"/go/bin
-
-# rbenv
-status --is-interactive; and type --query rbenv; and rbenv init - --no-rehash fish | source
-
-# pyenv
-status --is-interactive; and type --query pyenv; and pyenv init - fish | source
-
 # bat
 type --query batman; and set --export MANPAGER "env BATMAN_IS_BEING_MANPAGER=yes $(which batman)"
 
@@ -94,12 +81,17 @@ status --is-interactive; and type --query starship; and starship init fish | sou
 # type --query tide; and tide configure --auto --style=Classic --prompt_colors='True color' --classic_prompt_color=Dark --show_time=No --classic_prompt_separators=Angled --powerline_prompt_heads=Sharp --powerline_prompt_tails=Flat --powerline_prompt_style='One line' --prompt_spacing=Compact --icons='Many icons' --transient=No; and tide reload
 
 # iTerm 2 shell integration
-test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+status --is-interactive; and test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
 # Added by LM Studio CLI (lms)
-fish_add_path /Users/andy/.lmstudio/bin
+test -e {$HOME}/.lmstudio/bin ; and fish_add_path {$HOME}/.lmstudio/bin
 # End of LM Studio CLI section
 
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
-source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+test -e {$HOME}/.orbstack/shell/init2.fish ; and source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /Users/andy/.lmstudio/bin
+# End of LM Studio CLI section
+
