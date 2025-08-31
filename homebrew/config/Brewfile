@@ -2,18 +2,22 @@ tap "eth-p/software"
 
 brew "bat"
 brew "eth-p/software/bat-extras-batman"
+brew "exiftool"
 brew "fish"
 brew "fzf"
 brew "git"
 brew "git-delta"
 brew "gpg"
 brew "jq"
+brew "just"
 brew "libyaml" # to build ruby
 brew "mas"
 brew "mise"
 # brew "mosh" # Build from source since the homebrew version segfaults
 brew "ripgrep"
+brew "rsync"
 brew "starship"
+brew "task-spooler"
 brew "tmux"
 
 # python-build dependencies
@@ -25,22 +29,26 @@ brew "zlib"
 brew "tcl-tk@8"
 brew "libb2"
 
+# rpi dependencies
+brew "libusb"
+brew "pkg-config"
+
 cask "1password"
 cask "1password-cli"
 cask "adobe-creative-cloud"
 cask "affinity-photo"
 cask "alfred"
 cask "arq"
+cask "balenaetcher"
 cask "bambu-studio"
 cask "bartender"
 cask "beyond-compare"
 cask "coconutbattery"
 cask "discord"
-cask "eloston-chromium"
 cask "firefox"
 cask "font-fira-code"
 cask "font-fira-code-nerd-font"
-cask "gitup"
+cask "gitup-app"
 cask "home-assistant"
 cask "iina"
 cask "istat-menus"
@@ -48,17 +56,20 @@ cask "iterm2"
 cask "lm-studio"
 cask "microsoft-office"
 cask "omnidisksweeper"
+cask "openscad@snapshot"
 cask "orbstack"
 cask "raspberry-pi-imager"
 cask "signal"
 cask "slack"
-cask "syncthing"
+cask "syncthing-app"
 cask "textexpander"
 cask "transmission"
+cask "ungoogled-chromium"
 cask "visual-studio-code"
 cask "vlc"
 
 mas "1Password for Safari", id: 1569813296
+# mas "Callsheet: Find Cast & Crew", id: 1672356376
 mas "CARROTweather", id: 993487541
 mas "Disk Aid", id: 1007358832
 mas "Fantastical", id: 975937182
