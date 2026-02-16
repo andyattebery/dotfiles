@@ -1,3 +1,5 @@
+set --export CLICOLOR 1
+
 # GNU LS_COLORS solarized-dark theme from: https://github.com/sharkdp/vivid
 # BSD LSCOLORS converted from above using the LSCOLORS section from: https://man.freebsd.org/cgi/man.cgi?ls
 if $IS_OS_MACOS
