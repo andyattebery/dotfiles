@@ -16,7 +16,7 @@
 # Run `sudo -v` to cache credentials at the start of the run
 # This avoids a blocking password prompt in the middle of an unattended run
 # (default: false)
-pre_sudo = true
+#pre_sudo = true
 
 # Sudo command to be used
 # sudo_command = "sudo"
@@ -120,8 +120,8 @@ disable = ["containers"]
 # "Custom command using interactive shell (unix)" = "-i vim_upgrade"
 "docker compose" = """
 sh -c '
-if command -v dc > /dev/null 2>&1; then
-  cd "$DOCKER_COMPOSE_DIR" && dc
+if command -v dcup > /dev/null 2>&1; then
+  dcup
 else
   echo "No DOCKER_COMPOSE_DIR or dc found."
 fi
