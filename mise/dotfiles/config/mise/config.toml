@@ -1,8 +1,12 @@
 [tools]
 dotnet = '9'
+go = '1.25'
 node = '22'
 python = '3'
 ruby = '3'
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby"]
+
+[settings.python]
+compile = true
