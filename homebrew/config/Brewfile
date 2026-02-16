@@ -14,20 +14,26 @@ brew "libyaml" # to build ruby
 brew "mas"
 brew "mise"
 # brew "mosh" # Build from source since the homebrew version segfaults
+brew "neovim"
 brew "ripgrep"
 brew "rsync"
 brew "starship"
 brew "task-spooler"
 brew "tmux"
+brew "topgrade"
+
+# mosh dependencies
+brew "protobuf"
+brew "automake"
 
 # python-build dependencies
+brew "libb2"
 brew "openssl"
 brew "readline"
 brew "sqlite3"
+brew "tcl-tk@8"
 brew "xz"
 brew "zlib"
-brew "tcl-tk@8"
-brew "libb2"
 
 # rpi dependencies
 brew "libusb"
@@ -36,13 +42,17 @@ brew "pkg-config"
 cask "1password"
 cask "1password-cli"
 cask "adobe-creative-cloud"
+cask "affinity-designer"
 cask "affinity-photo"
 cask "alfred"
 cask "arq"
+cask "autodesk-fusion"
 cask "balenaetcher"
 cask "bambu-studio"
 cask "bartender"
 cask "beyond-compare"
+cask "claude"
+cask "claude-code"
 cask "coconutbattery"
 cask "discord"
 cask "firefox"
@@ -62,9 +72,12 @@ cask "raspberry-pi-imager"
 cask "signal"
 cask "slack"
 cask "syncthing-app"
+cask "tailscale-app"
 cask "textexpander"
+cask "the-unarchiver"
 cask "transmission"
 cask "ungoogled-chromium"
+cask "vimr"
 cask "visual-studio-code"
 cask "vlc"
 
@@ -81,10 +94,10 @@ mas "Paprika Recipe Manager 3", id: 1303222628
 mas "Parcel", id: 639968404
 mas "Reeder", id: 1529448980
 mas "Silicio", id: 933627574
-mas "Tailscale", id: 1475387142
 mas "TestFlight", id: 899247664
 mas "The Camelizer", id: 1532579087
 mas "The Unarchiver", id: 425424353
 mas "ToothFairy", id: 1191449274
+mas "Windows App", id: 1295203466
 mas "WireGuard", id: 1451685025
 mas "Xcode", id: 497799835
