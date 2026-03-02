@@ -5,6 +5,7 @@ set fish_greeting # Clear the default greeting
 if not functions -q fundle; eval (curl -sfL https://git.io/fundle-install); end
 
 # Set base environment variables
+set --export HOSTNAME (hostname -s)
 set --export DOTFILES_DIR $HOME/dotfiles
 
 # Set platform environment variables
