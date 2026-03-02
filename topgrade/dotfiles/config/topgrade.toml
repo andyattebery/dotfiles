@@ -123,7 +123,7 @@ sh -c '
 if command -v dcup > /dev/null 2>&1; then
   dcup
 else
-  echo "dcup (provided by Ansible role docker_compose) found."
+  echo "dcup (provided by Ansible role docker_compose) not found."
 fi
 '
 """
