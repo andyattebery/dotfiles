@@ -1,12 +1,14 @@
 [tools]
-dotnet = '9'
-go = '1.25'
-node = '22'
+dotnet = '10'
+go = '1'
+node = 'lts'
 python = '3'
 ruby = '3'
+uv = 'latest'
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby"]
 
 [settings.python]
 compile = true
+uv_venv_auto = "source"
