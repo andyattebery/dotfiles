@@ -49,7 +49,13 @@ disable = ["containers"]
 # Don't ask for confirmations (no default value)
 # assume_yes = true
 
-# Do not ask to retry failed steps (default: false)
+# Whether to ask what to do after a step fails (default: true)
+# ask_retry = true
+
+# Number of times to automatically retry a step when it fails (default: 0)
+# auto_retry = 3
+
+# Same as ask_retry = false (default: false) - legacy
 # no_retry = true
 
 # Show the reason for skipped steps (default: false)
@@ -66,7 +72,7 @@ disable = ["containers"]
 # tmux_session_mode = "attach_if_not_in_session"
 
 # Cleanup temporary or old files (default: false)
-# cleanup = true
+cleanup = true
 
 # Send a notification for every step (default: false)
 # notify_each_step = false
