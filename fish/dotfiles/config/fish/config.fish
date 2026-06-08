@@ -68,6 +68,11 @@ end
 # bat
 type --query batman; and set --export MANPAGER "env BATMAN_IS_BEING_MANPAGER=yes $(which batman)"
 
+# mise
+if not $IS_OS_MACOS
+  mise activate fish | source
+end
+
 # mosh
 set --export MOSH_TITLE_NOPREFIX 1
 
