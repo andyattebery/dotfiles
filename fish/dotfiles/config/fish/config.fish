@@ -68,11 +68,6 @@ end
 # bat
 type --query batman; and set --export MANPAGER "env BATMAN_IS_BEING_MANPAGER=yes $(which batman)"
 
-# mise
-if not $IS_OS_MACOS
-  mise activate fish | source
-end
-
 # mosh
 set --export MOSH_TITLE_NOPREFIX 1
 
@@ -97,7 +92,7 @@ test -e {$HOME}/.lmstudio/bin ; and fish_add_path {$HOME}/.lmstudio/bin
 # This won't be added again if you remove it.
 test -e {$HOME}/.orbstack/shell/init2.fish ; and source ~/.orbstack/shell/init2.fish 2>/dev/null || :
 
-# Added by LM Studio CLI (lms)
-set -gx PATH $PATH /Users/andy/.lmstudio/bin
-# End of LM Studio CLI section
-
+# mise
+if not $IS_OS_MACOS; and type --query mise
+  mise activate fish | source
+end
