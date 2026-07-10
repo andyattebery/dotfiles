@@ -5,7 +5,7 @@
 add_newline = false
 
 format = """
-($username@)$hostname $directory$character"""
+($username@)$hostname $directory$character$line_break"""
 
 # move the rest of the prompt to the right
 right_format = """$all"""
