@@ -17,13 +17,14 @@ brew "mise"
 brew "neovim"
 brew "ripgrep"
 brew "rsync"
+brew "shellcheck"
+brew "sops"
 brew "starship"
 brew "task-spooler"
 brew "tmux"
 brew "topgrade"
-
-# mosh dependencies
-brew "protobuf"
+brew "uv"
+brew "yq"
 brew "automake"
 
 # python-build dependencies
