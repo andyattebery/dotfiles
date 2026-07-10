@@ -25,6 +25,12 @@ brew "tmux"
 brew "topgrade"
 brew "uv"
 brew "yq"
+
+# mosh dependencies (see mosh/build-macos-static.sh)
+# protobuf is deliberately absent: mosh links it statically from a pinned
+# private prefix, because `brew upgrade protobuf` deletes the versioned dylib
+# and breaks the installed mosh-client.
+brew "cmake"
 brew "automake"
 
 # python-build dependencies
