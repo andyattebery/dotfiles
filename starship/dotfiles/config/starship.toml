@@ -5,10 +5,13 @@
 add_newline = false
 
 format = """
-($username@)$hostname $directory$character$line_break"""
+($username@)$hostname $directory$character$fill$all$line_break"""
 
-# move the rest of the prompt to the right
-right_format = """$all"""
+# push the rest of the prompt to the right edge of the same row, so the
+# cursor row below stays empty. `right_format` can't do this — it always
+# renders on the input row.
+[fill]
+symbol = " "
 
 [directory]
 fish_style_pwd_dir_length = 1
@@ -25,23 +28,47 @@ ssh_only = true
 format = "[$user]($style)"
 show_always = false
 
+# self-hides for the `default` and `desktop-linux` contexts, so it is already silent on
+# servers and Docker Desktop machines. docker is never pointed at a remote daemon, so all
+# this can ever render is a local VM runtime name — noise wherever it shows up.
 [docker_context]
-format = " [docker $context]($style)"
+disabled = true
+
+# the version of the repo you are sitting in, read from the manifest you are editing.
+[package]
+disabled = true
 
 [git_branch]
 format = '[$symbol$branch(:$remote_branch)]($style) '
 
+# version_format = '${raw}', not '${major}.${minor}.${patch}': ${patch} renders empty for a
+# two-component version, so 'go 1.25' would come out as 'go 1.25.'. '${raw}' is the whole
+# version minus the 'v' prefix.
 [golang]
+version_format = '${raw}'
 format = ' [go ($version )]($style)'
 
 [nodejs]
+version_format = '${raw}'
 format = ' [node ($version )]($style)'
 
+# $virtualenv distinguishes a project python from the global mise one — the version alone
+# does not, since a local pin often resolves to the same version. the trailing spaces inside
+# the conditional groups separate this module from whatever follows it.
 [python]
-format = ' [py $pyenv_prefix($version )(\($virtualenv\) )]($style)'
+version_format = '${raw}'
+format = ' [py ($version )(\($virtualenv\) )]($style)'
 
 [ruby]
+version_format = '${raw}'
 format = ' [(rb $version )]($style)'
+
+# presence-only, unlike the language modules above: vagrant is not mise-managed, so its
+# version is a per-machine constant. the Vagrantfile being here is the whole signal.
+# the trailing space is required — cmd_duration follows this module and its format
+# starts with "took", no leading space.
+[vagrant]
+format = ' [vagrant ]($style)'
 
 [palettes.solarized]
 base03  = "#002b36" #002b36
