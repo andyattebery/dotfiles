@@ -1,13 +1,17 @@
 tap "eth-p/software"
 
+brew "age"
 brew "bat"
 brew "eth-p/software/bat-extras-batman"
 brew "exiftool"
+brew "ffmpeg"
 brew "fish"
 brew "fzf"
+brew "gh"
 brew "git"
 brew "git-delta"
 brew "gpg"
+brew "iperf3"
 brew "jq"
 brew "just"
 brew "libyaml" # to build ruby
@@ -24,7 +28,9 @@ brew "task-spooler"
 brew "tmux"
 brew "topgrade"
 brew "uv"
+brew "wakeonlan"
 brew "yq"
+brew "yt-dlp"
 
 # mosh dependencies (see mosh/build-macos-static.sh)
 # protobuf is deliberately absent: mosh links it statically from a pinned
@@ -52,11 +58,12 @@ cask "adobe-creative-cloud"
 cask "affinity-designer"
 cask "affinity-photo"
 cask "alfred"
+cask "android-platform-tools"
 cask "arq"
 cask "autodesk-fusion"
 cask "balenaetcher"
 cask "bambu-studio"
-cask "bartender"
+# cask "bartender" # Replaced by hiddenbar; prefs kept in case I switch back
 cask "beyond-compare"
 cask "claude"
 cask "claude-code"
@@ -66,22 +73,26 @@ cask "firefox"
 cask "font-fira-code"
 cask "font-fira-code-nerd-font"
 cask "gitup-app"
+cask "hiddenbar"
 cask "home-assistant"
 cask "iina"
 cask "istat-menus"
 cask "iterm2"
 cask "lm-studio"
-cask "microsoft-office"
+cask "microsoft-office", greedy: true
 cask "omnidisksweeper"
 cask "openscad@snapshot"
 cask "orbstack"
+cask "qmk-toolbox"
 cask "raspberry-pi-imager"
+cask "remote-desktop-manager"
 cask "signal"
 cask "slack"
 cask "syncthing-app"
 cask "tailscale-app"
 cask "textexpander"
 cask "the-unarchiver"
+cask "tor-browser"
 cask "transmission"
 cask "ungoogled-chromium"
 cask "vimr"
@@ -90,21 +101,31 @@ cask "vlc"
 
 mas "1Password for Safari", id: 1569813296
 # mas "Callsheet: Find Cast & Crew", id: 1672356376
-mas "CARROTweather", id: 993487541
 mas "Disk Aid", id: 1007358832
 mas "Fantastical", id: 975937182
+mas "Folder Quick Look", id: 6753110395
+mas "GarageBand", id: 682658836
 mas "HomeControl", id: 1547121417
+mas "Hyperspace", id: 6739505345
+mas "iMovie", id: 408981434
 mas "Ivory", id: 6444602274
+mas "Keynote", id: 409183694
+mas "Marked Quick Look", id: 6787414592
+mas "Marked", id: 6747497179
 mas "NepTunes", id: 1006739057
 mas "Noir", id: 1592917505
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
 mas "Paprika Recipe Manager 3", id: 1303222628
-mas "Parcel", id: 639968404
+mas "Parcel", id: 375589283
+mas "QLPlay", id: 6746981834
 mas "Reeder", id: 1529448980
 mas "Silicio", id: 933627574
 mas "TestFlight", id: 899247664
 mas "The Camelizer", id: 1532579087
-mas "The Unarchiver", id: 425424353
 mas "ToothFairy", id: 1191449274
+mas "WhatsApp", id: 310633997
 mas "Windows App", id: 1295203466
+mas "Wipr", id: 1662217862
 mas "WireGuard", id: 1451685025
 mas "Xcode", id: 497799835
