@@ -57,10 +57,11 @@ Before declaring done: read affected files end-to-end. Output a short summary co
 Triggered by: any task that spans more than a couple of tool calls — research, a plan, edits
 across several files, a deploy. Not one-off questions.
 
-`tasks/` holds one Markdown file per task, `<kebab-case-summary>.md`. These are explicitly the
-agent's own working documents for a task — not a deliverable, not a report for the user. Write
-them for whoever picks the task up next, which is usually a future session with none of the
-current context: what is being done, where it got to, what was decided and why.
+`tasks/` holds one Markdown file per task, `<YYYY-MM-DD>-<kebab-case-summary>.md`, dated the day
+the task starts. These are explicitly the agent's own working documents for a task — not a
+deliverable, not a report for the user. Write them for whoever picks the task up next, which is
+usually a future session with none of the current context: what is being done, where it got to,
+what was decided and why.
 
 Because it is a working doc, it gets written *during* the work, not reconstructed afterwards. It
 is the place to park a finding, a dead end, or a half-verified claim the moment it appears, rather
@@ -84,14 +85,15 @@ to write it down.
 
 Triggered by: the moment a plan is approved.
 
-Copy the working file from `~/.claude/plans/` to `plans/<kebab-case-summary>.md`, and from then on
-**edit the copy**. The `~/.claude/plans/` original is disposable — an accepted plan closes, and the
-next planning session overwrites that path.
+Copy the working file from `~/.claude/plans/` to `plans/<YYYY-MM-DD>-<kebab-case-summary>.md`,
+dated the day of acceptance, and from then on **edit the copy**. The `~/.claude/plans/` original
+is disposable — an accepted plan closes, and the next planning session overwrites that path.
 
 This matters because the plan is usually least accurate at the moment it is approved. Execution is
 what finds the failure modes, and those corrections belong in the plan someone will actually re-read
 — not in a file that is about to be destroyed. If a later planning session revisits the same work,
-it edits the `~/.claude/plans/` copy again by necessity; re-copy on the next acceptance.
+it edits the `~/.claude/plans/` copy again by necessity; re-copy over the same `plans/` file on the
+next acceptance, keeping its original date prefix.
 
 Required artifact: the file exists in `plans/` before the first step of the plan is executed.
 
@@ -126,6 +128,8 @@ ago, which is most of what you need when resuming.
 Take the value from the shell, never from memory:
 
     date "+%Y-%m-%d %H:%M %Z"
+
+The filename date prefix comes from the shell the same way: `date +%F`.
 
 The model has no clock. An inferred timestamp is worse than no timestamp, because it reads as
 authoritative and is silently wrong. When a time is reconstructed after the fact — from a container
